@@ -15,4 +15,4 @@ In addition, the user can delete and mark tasks as done
 - JavaScript
 
 ## Demo
-!(https://angelikakrygier.github.io/taskList/)
+https://angelikakrygier.github.io/taskList/
