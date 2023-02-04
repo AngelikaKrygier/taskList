@@ -1,13 +1,6 @@
 {
     const tasks = [
-        {
-            content: "Wypić kawę",
-            done: true
-        },
-        {
-            content: "Zrobić prace domową z modułu 6",
-            done: false
-        },
+        {},
     ];
 
     const addNewTask = (newTaskContent) => {
@@ -35,7 +28,7 @@
             });
         });
 
-        const toggleDoneButton = document.querySelectorAll(".js-done");
+        const toggleDoneButton = document.querySelectorAll(".js-toggleDone");
         toggleDoneButton.forEach((toggleDone, index) => {
             toggleDone.addEventListener("click", () => {
                 toggleTaskDone(index);
@@ -49,12 +42,17 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li 
-                ${task.done ? "style=\"text-decoration:line-through\"" : ""}
-                >
-                <button class="js-done">zrobione?</button>
-                <button class="js-remove">usuń zadanie</button>
+            <li class="taskslist__item"
+            >
+               <button class="tasksList__button tasksList__button--toogleDone js-toggleDone"> 
+               ${task.done ? "✓" : ""}
+               </button>
+                <span class="tasksList__content ${task.done ? "tasksList__content--done" : ""}">
                 ${task.content}
+                </span>
+
+                <button class="tasksList__button tasksList__button--remove js-remove">🗑</button>
+             
             </li>
             `;
         }

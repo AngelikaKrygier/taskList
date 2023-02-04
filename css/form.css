@@ -1,0 +1,38 @@
+.form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
+
+}
+
+@media (max-width:767px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.form__input {
+    padding: 10px;
+    border: 1px solid #bdbdbd;
+    border-radius: 1px;
+
+}
+
+
+.form__button {
+    border: none;
+    padding: 10px;
+    background-color: rgb(0, 151, 151);
+    color: white;
+    border-radius: 1px;
+
+}
+
+.form__button:hover {
+    background-color: rgb(2, 170, 170);
+}
+
+.form__button:active {
+    background-color: rgb(3, 193, 193);
+}
