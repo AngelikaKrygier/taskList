@@ -31,6 +31,7 @@
 
 .tasksList__button--toogleDone:hover {
     background-color: hsl(120, 64%, 53%);
+    cursor: pointer;
 }
 
 .tasksList__button--toogleDone:active {
@@ -43,6 +44,7 @@
 
 .tasksList__button--remove:hover {
     background-color: rgb(247, 22, 67);
+    cursor: pointer;
 }
 
 .tasksList__button--remove:active {

@@ -22,12 +22,15 @@
     background-color: rgb(0, 151, 151);
     color: white;
     border-radius: 1px;
+
 }
 
 .form__button:hover {
     background-color: rgb(2, 170, 170);
+    cursor: pointer;
 }
 
 .form__button:active {
     background-color: rgb(3, 193, 193);
+
 }
