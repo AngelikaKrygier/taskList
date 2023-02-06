@@ -1,7 +1,5 @@
 {
-    const tasks = [
-        {},
-    ];
+    const tasks = [];
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
@@ -43,12 +41,12 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li class="taskslist__item">
+            <li class="taskslist__item js-taskList">
                <button class="tasksList__button tasksList__button--toogleDone js-toggleDone"> 
-               ${task.done ? "✓" : ""} 
+                    ${task.done ? "✓" : ""} 
                </button>
-                <span class="tasksList__content ${task.done ? "tasksList__content--done" : ""}">
-                ${task.content}
+               <span class="tasksList__content ${task.done ? "tasksList__content--done" : ""}">
+                     ${task.content}
                 </span>
                 <button class="tasksList__button tasksList__button--remove js-remove">
                 🗑
@@ -64,11 +62,15 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
-        if (newTaskContent === "") {
-            return;
+        const newTaskElement= document.querySelector(".js-newTask");
+        const newTaskContent = newTaskElement.value.trim();
+
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
+            newTaskElement.value = "";
         }
-        addNewTask(newTaskContent);
+        newTaskElement.focus();
+        
     };
 
     const init = () => {
