@@ -5,7 +5,7 @@
 In addition, the user can delete and mark tasks as done 
 
 
-![TasksList]![taskList](https://user-images.githubusercontent.com/123166327/216922955-b08f5857-0090-4478-9611-518463a46b0b.gif)
+![taskList](https://user-images.githubusercontent.com/123166327/216922955-b08f5857-0090-4478-9611-518463a46b0b.gif)
 
 
 ### Technologies
