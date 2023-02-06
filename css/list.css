@@ -13,7 +13,7 @@
     border-bottom: 1px solid #bdbdbd;
 }
 
-.taskslist__content--done {
+.tasksList__content--done {
     text-decoration: line-through;
 }
 
@@ -22,6 +22,7 @@
     height: 30px;
     color: white;
     border: none;
+    padding: 0;
 }
 
 
