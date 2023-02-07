@@ -1,20 +1,31 @@
 {
-    const tasks = [];
+    let tasks = [];
 
     const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
+        tasks = [
+            ...tasks,
+            { content: newTaskContent }
+        ];
         render();
     };
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1)
+        ];
         render();
     };
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            {
+                ...tasks[taskIndex],
+                done: !tasks[taskIndex].done
+            },
+            ...tasks.slice(taskIndex + 1),
+        ];
         render();
     };
 
@@ -62,7 +73,7 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskElement= document.querySelector(".js-newTask");
+        const newTaskElement = document.querySelector(".js-newTask");
         const newTaskContent = newTaskElement.value.trim();
 
         if (newTaskContent !== "") {
@@ -70,7 +81,7 @@
             newTaskElement.value = "";
         }
         newTaskElement.focus();
-        
+
     };
 
     const init = () => {
