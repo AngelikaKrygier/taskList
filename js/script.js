@@ -51,6 +51,16 @@
         });
     };
 
+
+    const allTasksDone = () => {
+        tasks = tasks.map((task) => ({
+            ...task, done: true,
+        }));
+        render();
+    };
+
+
+
     const renderTask = () => {
         let htmlString = "";
 
@@ -74,9 +84,34 @@
     };
 
 
-    const renderButton = () => { };
+    const renderButton = () => {
+        const tasksActionButtons = document.querySelector(".js-buttons");
 
-    const bindButtonsEvents = () => { };
+        if (tasks.length === 0) {
+            tasksActionButtons.innerHTML = "";
+            return;
+        } else {
+            tasksActionButtons.innerHTML = `
+                <button class="section__button js-hideComplitedTasks">Ukryj ukończone</button>
+                <button class="section__button js-finishAllTasksButton"
+                ${tasks.every(({ done }) => done) ? "disabled" : ""}>
+                Ukończ wszystkie
+                 </button >
+                `
+        };
+
+    };
+
+
+    const bindButtonsEvents = () => {
+        const finishAllTasksButton = document.querySelector(".js-finishAllTasksButton")
+
+        if (finishAllTasksButton) {
+            finishAllTasksButton.addEventListener("click", allTasksDone)
+        };
+
+    };
+
 
     const render = () => {
         renderTask();
