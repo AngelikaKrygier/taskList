@@ -10,7 +10,7 @@
     grid-gap: 10px;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #bdbdbd;
+    border-bottom: 1px solid rgb(189, 189, 189);
 }
 
 .tasksList__item--hidden {
@@ -24,34 +24,36 @@
 .tasksList__button {
     width: 30px;
     height: 30px;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 0;
 }
 
 
 .tasksList__button--toogleDone {
-    background-color: hsl(120, 60%, 40%);
+    background-color: rgb(41, 163, 41);
+    transition: 1s;
 }
 
 .tasksList__button--toogleDone:hover {
-    background-color: hsl(120, 64%, 53%);
+    background-color: rgb(58, 212, 58);
     cursor: pointer;
 }
 
 .tasksList__button--toogleDone:active {
-    background-color: hsl(120, 86%, 60%);
+    background-color: rgb(65, 241, 65);
 }
 
 .tasksList__button--remove {
-    background-color: crimson;
+    background-color: rgb(237, 18, 62);
+    transition: 1s;
 }
 
 .tasksList__button--remove:hover {
-    background-color: rgb(247, 22, 67);
+    background-color: rgba(237, 18, 62, 0.774);
     cursor: pointer;
 }
 
 .tasksList__button--remove:active {
-    background-color: rgb(246, 41, 82);
+    background-color: rgba(237, 18, 62, 0.711);
 }

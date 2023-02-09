@@ -12,7 +12,7 @@
 
 .form__input {
     padding: 10px;
-    border: 1px solid #bdbdbd;
+    border: 1px solid rgb(189, 189, 189);
     border-radius: 1px;
 }
 
@@ -22,15 +22,17 @@
     background-color: rgb(0, 151, 151);
     color: white;
     border-radius: 1px;
+    transition: 1s;
 
 }
 
 .form__button:hover {
-    background-color: rgb(2, 170, 170);
+    background-color: rgba(0, 151, 151, 0.736);
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 .form__button:active {
-    background-color: rgb(3, 193, 193);
+    background-color: rgba(3, 193, 193, 0.114);
 
 }
