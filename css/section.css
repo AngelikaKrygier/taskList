@@ -1,6 +1,6 @@
 .section {
     background-color: rgb(255, 255, 255);
-    margin-top: 10px 0;
+    margin-top: 10px;
     box-shadow: 0 0 5px rgb(221, 221, 221);
 }
 
@@ -21,6 +21,15 @@
     justify-content: center;
 }
 
+@media (max-width:550px) {
+    .section__BlockButtons {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        padding-bottom: 15px;
+    }
+}
+
 
 .section__button {
     border: none;
@@ -28,7 +37,12 @@
     color: rgb(0, 128, 128);
     font-size: 15px;
     cursor: pointer;
+    transition: 1s;
 
+}
+
+.section__button:hover {
+    color: rgba(0, 128, 128, 0.485);
 
 }
 
@@ -37,4 +51,17 @@
     grid-template-columns: 3fr 2fr;
     grid-gap: 10px;
     border-bottom: 1px solid rgb(189, 189, 189);
+}
+
+@media (max-width:550px) {
+    .section__body {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.section__button:disabled {
+    color: rgb(166, 166, 166);
+
 }
