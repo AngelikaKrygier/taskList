@@ -8,10 +8,33 @@
     font-size: 20px;
     padding: 20px;
     margin: 0;
-    border-bottom: 1px solid #bdbdbd;
 
 }
 
 .section__mainPart {
     padding: 20px;
+}
+
+
+.section__BlockButtons {
+    display: flex;
+    justify-content: center;
+}
+
+
+.section__button {
+    border: none;
+    background-color: white;
+    color: teal;
+    font-size: 15px;
+    cursor: pointer;
+
+
+}
+
+.section__body {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 10px;
+    border-bottom: 1px solid #bdbdbd;
 }

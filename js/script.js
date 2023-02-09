@@ -38,7 +38,6 @@
                 removeTask(index);
             });
         });
-
     };
 
     const bindToggleEvents = () => {
@@ -52,7 +51,7 @@
     };
 
 
-    const allTasksDone = () => {
+    const finishAllTasksDone = () => {
         tasks = tasks.map((task) => ({
             ...task, done: true,
         }));
@@ -60,13 +59,18 @@
     };
 
 
+    const toggleViewDoneTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    };
+
 
     const renderTask = () => {
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
-        <li class="taskslist__item js-taskList">
+        <li class="taskslist__item ${task.done && hideDoneTasks ? "tasksList__item--hidden" : ""} js-taskList">
            <button class="tasksList__button tasksList__button--toogleDone js-toggleDone"> 
                 ${task.done ? "✓" : ""} 
            </button>
@@ -78,7 +82,6 @@
             </button>
         </li>
         `;
-
         }
         document.querySelector(".js-taskList").innerHTML = htmlString;
     };
@@ -92,14 +95,12 @@
             return;
         } else {
             tasksActionButtons.innerHTML = `
-                <button class="section__button js-hideComplitedTasks">Ukryj ukończone</button>
+                <button class="section__button js-hideComplitedTasks">${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
                 <button class="section__button js-finishAllTasksButton"
                 ${tasks.every(({ done }) => done) ? "disabled" : ""}>
                 Ukończ wszystkie
-                 </button >
-                `
+                 </button >  `
         };
-
     };
 
 
@@ -107,9 +108,14 @@
         const finishAllTasksButton = document.querySelector(".js-finishAllTasksButton")
 
         if (finishAllTasksButton) {
-            finishAllTasksButton.addEventListener("click", allTasksDone)
+            finishAllTasksButton.addEventListener("click", finishAllTasksDone)
         };
 
+
+        const toggleViewDoneTasksButton = document.querySelector(".js-hideComplitedTasks")
+        if (toggleViewDoneTasksButton) {
+            toggleViewDoneTasksButton.addEventListener("click", toggleViewDoneTasks)
+        }
     };
 
 
